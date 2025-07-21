@@ -16,7 +16,11 @@ export interface Stock {
     eps: number;
     bps: number;
 }
-
+export interface ChartData {
+    symbol: string;
+    name: string;
+    prices: StockPrice[];
+}
 export interface StockPrice {
     date: string;
     open: number;
