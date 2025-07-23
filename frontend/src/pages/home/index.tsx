@@ -94,7 +94,7 @@ export default function HomePage() {
                 <div className="bg-white rounded-lg shadow-sm border border-gray-200">
                     <div className="p-6">
                         <h2 className="text-xl font-semibold text-gray-900 mb-4">주요 종목 시세</h2>
-                        <StockTable data={koreanStocks || []} isLoading={isLoading} />
+                        {/* <StockTable data={koreanStocks || []} isLoading={isLoading} /> */}
                     </div>
                 </div>
             </div>
