@@ -23,6 +23,20 @@ const queryClient = new QueryClient({
 function NavLink({ to, children }: { to: string; children: React.ReactNode }) {
     const location = useLocation();
     const isActive = location.pathname === to;
+    //차트 페이지는 기본적으로 chart/:symbol 형식으로 접근해야 함
+    //그래서 chart/:symbol 일 경우 그대로 렌더링하고 아닐 경우 리다이렉트
+    // if (to === '/chart') {
+    //     return (
+    //         <Link
+    //             to={`/chart/${to}`}
+    //             className={`inline-flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+    //                 isActive ? 'bg-blue-50 text-blue-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+    //             }`}
+    //         >
+    //             {children}
+    //         </Link>
+    //     );
+    // }
 
     return (
         <Link
@@ -81,7 +95,7 @@ function App() {
                                             <NavLink to="/korean-stock">국내주식</NavLink>
                                             <NavLink to="/stock">해외주식</NavLink>
                                             <NavLink to="/watchlist">관심종목</NavLink>
-                                            <NavLink to="/chart">차트</NavLink>
+                                            <NavLink to="/chart/005930">차트</NavLink>
                                         </div>
                                     </div>
                                     <div className="flex items-center">
